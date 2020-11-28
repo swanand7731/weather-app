@@ -3,6 +3,8 @@ let locationMessage = document.querySelector("#location");
 let forecastMessage = document.querySelector("#forecast");
 let addressMessage = document.querySelector("#address");
 let errorMessage = document.querySelector("#error");
+let cloudcoverMessage = document.querySelector("#cloudcover");
+let humidityMessage = document.querySelector("#humidity");
 
 weatherForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -17,11 +19,15 @@ weatherForm.addEventListener("submit", (e) => {
             locationMessage.textContent = "";
             forecastMessage.textContent = "";
             addressMessage.textContent = "";
+            humidityMessage.textContent = "";
+            cloudcoverMessage.textContent = "";
           } else {
             errorMessage.textContent = "";
             locationMessage.textContent = data.location;
             forecastMessage.textContent = data.forecast;
             addressMessage.textContent = data.address;
+            humidityMessage.textContent = data.humidity + "%";
+            cloudcoverMessage.textContent = data.cloudcover + "%";
           }
         });
       }

@@ -42,9 +42,11 @@ app.get("/weather", (req, res) => {
         return res.send({error});
       }
       res.send({
-        forecast:`It is currently ${forecastData.temperature} degrees out. And feels like ${forecastData.feelslike}`,
+        forecast:`${forecastData.description}. It is currently ${forecastData.temperature} degrees out. And feels like ${forecastData.feelslike}`,
         location,
-        address:req.query.address
+        address:req.query.address,
+        humidity: forecastData.humidity,
+        cloudcover:forecastData.cloudcover
       });
     });
   });
