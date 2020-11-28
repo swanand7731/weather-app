@@ -1,5 +1,3 @@
-console.log("Client side JS");
-
 const weatherForm = document.querySelector("form");
 let locationMessage = document.querySelector("#location");
 let forecastMessage = document.querySelector("#forecast");
