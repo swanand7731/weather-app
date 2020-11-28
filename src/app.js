@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const port = process.env.PORT || 3000;
 const path = require("path");
 const hbs = require('hbs');
 const geocode = require('./utils/geocode');
@@ -15,11 +16,11 @@ app.set("views", viewsPath);
 hbs.registerPartials(partialsPath);
 
 app.get("/", (req, res) => {
-  res.render("index", {title:"Weather", name:"Swan"});
+  res.render("index", {title:"Weather", name:"Swanand"});
 });
 
 app.get("/about", (req, res) => {
-    res.render("about", {title:"About", name:"Swan"});
+    res.render("about", {title:"About", name:"Swanand"});
 });
 
 app.get("/help", (req, res) => {
@@ -71,6 +72,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Up and Running!");
+app.listen(port, () => {
+  console.log("Up and Running on port: " + port);
 });

@@ -8,7 +8,7 @@ weatherForm.addEventListener("submit", (e) => {
   e.preventDefault();
   let address = e.target[0].value;
   if (address) {
-    fetch(`http://localhost:3000/weather?address=${address}`).then(
+    fetch(`/weather?address=${address}`).then(
       (response) => {
         //After we get the response, try to parse it to an object
         response.json().then((data) => {
